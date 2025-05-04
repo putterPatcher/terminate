@@ -26,9 +26,18 @@ def __wait(t=5)->None:
 # 	= "w": wait and exit
 # 	= "a": ask to exit
 def retrn(r:str,e:str|TypeError|Exception)->None:
+    '''
+#### Function to handle exit
+- **r**: 
+    1. **'e'** - Exit directly
+    2. **'c'** - Continue
+    3. **'w'** - Wait for 5 seconds before exit
+    4. **'a'** - Ask prompt before exit
+- **e**: Error to print
+    '''
     print(e,"\n")
     match r:
-    	case "e":__stop();
+        case "e":__stop();
         case 'c':pass;
         case 'w':__wait();
         case 'a':a=input("exit? y/n\n");__ask(a);
