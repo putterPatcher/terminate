@@ -40,7 +40,7 @@ def retrn(r:str,e:str|TypeError|Exception)->None:
     print()
     match r:
         case "e":__stop();
-        case 'c':pass;
+        case 'c':raise Exception("Continued after Exception...");
         case 'w':__wait();
         case 'a':a=input("exit? y/n\n");__ask(a);
         case _:print("Invalid argument: r => 'c'/'w'/'a'");a=input("exit? y/n\n");__ask(a);
