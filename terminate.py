@@ -1,4 +1,5 @@
 from time import sleep
+import traceback
 
 # exit with status code 1
 def __stop()->None:exit(1);
@@ -35,7 +36,8 @@ def retrn(r:str,e:str|TypeError|Exception)->None:
     4. **'a'** - Ask prompt before exit
 - **e**: Error to print
     '''
-    print(e,"\n")
+    traceback.print_exception(type(e), e, e.__traceback__)
+    print()
     match r:
         case "e":__stop();
         case 'c':pass;
