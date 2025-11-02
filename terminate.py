@@ -6,7 +6,7 @@ def __stop()->None:exit(1);
 
 # exit or continue after answering prompt
 def __ask(q: str)->None:
-    if q=='n':pass;
+    if q=='n':raise Exception("Continued after Exception...");
     elif q=='y':__stop();
     else:print("Invalid Input!\n");a=input("exit? y/n\n");__ask(a);
 
@@ -40,7 +40,7 @@ def retrn(r:str,e:str|TypeError|Exception)->None:
     print()
     match r:
         case "e":__stop();
-        case 'c':raise Exception("Continued after Exception...");
+        case 'c':pass;
         case 'w':__wait();
         case 'a':a=input("exit? y/n\n");__ask(a);
         case _:print("Invalid argument: r => 'c'/'w'/'a'");a=input("exit? y/n\n");__ask(a);
