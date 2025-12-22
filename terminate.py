@@ -26,7 +26,7 @@ def __wait(t=5)->None:
 #   = "c": don't exit
 # 	= "w": wait and exit
 # 	= "a": ask to exit
-def retrn(r:str,e:str|TypeError|Exception)->None:
+def retrn(r:str,e:str|TypeError|Exception,print_traceback=True)->None:
     '''
 #### Function to handle exit
 - **r**: 
@@ -36,7 +36,8 @@ def retrn(r:str,e:str|TypeError|Exception)->None:
     4. **'a'** - Ask prompt before exit
 - **e**: Error to print
     '''
-    traceback.print_exception(type(e), e, e.__traceback__)
+    if print_traceback:traceback.print_exception(type(e), e, e.__traceback__);
+    else:print(e.__class__.__name__ if e.__class__.__name__ !='str' else 'Error'+":",e);
     print()
     match r:
         case "e":__stop();
