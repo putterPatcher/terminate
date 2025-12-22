@@ -37,7 +37,7 @@ def retrn(r:str,e:str|TypeError|Exception,print_traceback=True)->None:
 - **e**: Error to print
     '''
     if print_traceback:traceback.print_exception(type(e), e, e.__traceback__);
-    else:print(e.__class__.__name__ if e.__class__.__name__ !='str' else 'Error'+":",e);
+    else:print((e.__class__.__name__ if e.__class__.__name__ !='str' else 'Error')+":",e);
     print()
     match r:
         case "e":__stop();
